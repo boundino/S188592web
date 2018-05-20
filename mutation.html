@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+  <head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/elements/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Mutation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+    <!--
+	CSS
+	============================================= -->
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nice-select.css">			
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+
+    <header id="header" id="home">
+      <div class="container header-top">
+	<div class="row">
+	  <div class="col-6 top-head-left">
+	    <ul>
+	      <li><a href="#">Contact Us</a></li>
+	      <!-- <li><a href="#">Buy Ticket</a></li> -->
+	    </ul>
+	  </div>
+	  <div class="col-6 top-head-right">
+	    <ul>
+	      <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+	      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	      <!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
+	      <!-- <li><a href="#"><i class="fa fa-behance"></i></a></li> -->
+	    </ul>
+	  </div>			  			
+	</div>
+      </div>
+      <hr>
+      <div class="container">
+	<div class="row align-items-center justify-content-between d-flex">
+	  <div id="logo">
+	    <a href="index.html"><img src="img/weblogo.png" alt="" title="" /></a>
+	  </div>
+	  <nav id="nav-menu-container">
+	    <ul class="nav-menu">
+	      <li class="menu-active"><a href="index.html">Home</a></li>
+              <li><a href="drift.html">Genetic drift</a></li>
+              <li><a href="mutation.html">Mutation</a></li>
+              <li><a href="#">Selection</a></li>
+              <li><a href="#">Others</a></li>
+	    </ul>
+	  </nav><!-- #nav-menu-container -->		    		
+	</div>
+      </div>
+    </header><!-- #header -->
+
+    <!-- start banner Area -->
+    <section class="banner-area-mutation relative" id="home">	
+      <div class="overlay overlay-bg"></div>
+      <div class="container">
+	<div class="row d-flex align-items-center justify-content-center">
+	  <div class="about-content col-lg-12">
+	    <h1 class="text-white">
+	      Mutation
+	    </h1>	
+	    <p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="mutation.html"> Mutation</a></p>
+	  </div>											
+	</div>
+      </div>
+    </section>
+    <!-- End banner Area -->	
+
+    <!-- Start Sample Area -->
+    <section class="sample-text-area">
+      <div class="container">
+	<h3 class="text-heading">Effect of mutations on diversity</h3>
+	<p class="sample-text">
+          Apart from the genetic drift we discuss in the last chapter, <b>mutations</b> are often involved with evolutions. Mutations can result from:
+          <div class="">
+            <ul class="unordered-list">
+              <li>errors during DNA replication</li>
+              <li>damage to DNA (such as caused by exposure to radiation or carcinogens)</li>
+              <li>insertion or deletion of segments of DNA due to mobile genetic elements</li>
+            </ul>
+          </div><br>
+          On one hand, mutations provide materials for natural selections. Generally mutations may or may not produce changes in the phenotype of an organism. On the other hand even if without natural selections, the process of mutation still effect the frequency of alleles. We will see the simulation combining the effect of drift and mutation in next chapter. Later we introduce a mathematical description for these two processes and discuss the balance status.
+        </p>
+      </div>
+    </section>
+    <!-- End Sample Area -->
+
+    <!-- Simulation -->
+    <section class="whole-wrap">
+      <div class="container">
+        <div class="section-top-border">
+	  <h3 class="text-heading">Simulate genetic drift and mutation</h3>
+	  <p class="sample-text">
+            We perform a simulation of genetic drift and mutation together. For the drift side, all the assumptions are same with the previous chapter. Therefore, the difference of the result here from the one in the previous chapter is the effect from mutations. To study the result of the population size, the simulations use size of 20, 200 and 2000. Here, only a gen with two alleles (red and blue) is considered. The plots shown below are the frequency of red allele as a function of generation. 
+          </p>
+          <div class="divcenter_1000">
+            <img src="plots/caline_mutation_N2.png" alt="" class="img-fluid">
+          </div>
+          <p>
+            We can see after 19 generations, only red allele is maintained, and no blue allele can be found. Therefore, from here on no blue allele will show up if no mutation is introduced. We call this status as <b>fixation</b> (frequency of 100%) and <b>loss</b> (disappear) of alleles.<br>
+            In this example, there are 20 individuals, and it is natural to imagine that when the population size becomes larger, the effect of drift will be smaller. To confirm this, we look at the allele frequency of the red allele in terms of generations under the population size of 20, 200 and 2000. For each configuration, 6 simulations are performed. The results shown below.
+          </p>
+          <p class="sample-text">
+            On the other hand, what if there are more than two alleles? To study the fixation time dependence on the number of alleles, we take a look at the distribution of five alleles in each generation which is shown in the video below.          
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Simulation -->
+
+    <!-- Diversity -->
+    <div class="whole-wrap">
+      <div class="container">
+        <div class="section-top-border">
+          <h3 class="text-heading">Effect of genetic drift on gene diversity</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="img/mechan_intro.gif" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-7 mt-sm-20">
+              <p>
+                According to the two animations shown in the previous chapter, we see an interesting feature about genetic drift. With various allele number and <i>(finite)</i> population size, it will reach fixation / loss of alleles sooner or later. Therefore, <b>the effect of genetic drift is reducing the diversity of gene</b>. In the next chapter, we will see, a process with opposite effect happens in the real world, that is <b>mutation</b>.<br><br>
+                <i>Figure source: <a href="https://www.sesbe.org/evosite/evo101/IIIMechanisms.shtml.html">https://www.sesbe.org/evosite/evo101/IIIMechanisms.shtml.html</a></i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- start footer Area -->
+    <footer class="footer-area section-gap">
+      <div class="container">
+        <!-- <div class="row"> -->
+        <!--   <div class="col-lg-5 col-md-6 col-sm-6"> -->
+        <div class="single-footer-widget">
+          <h6>About Us</h6>
+          <p>
+            This webpage is designed as final project for MIT physics 8.592, Statistical Physic in Biology in 2018 spring. <br>
+            by Jing Wang (jwang011@mit.edu)
+          </p>
+          <p class="footer-text">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+          <!-- </div> -->
+        </div>
+      </div>
+    </footer>
+    <!-- End footer Area -->
+
+    <script src="js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>			
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="js/easing.min.js"></script>			
+    <script src="js/hoverIntent.js"></script>
+    <script src="js/superfish.min.js"></script>	
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>	
+    <script src="js/owl.carousel.min.js"></script>			
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>			
+    <script src="js/parallax.min.js"></script>	
+    <script src="js/mail-script.js"></script>				
+    <script src="js/main.js"></script>	
+  </body>
+</html>
