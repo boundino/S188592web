@@ -60,8 +60,8 @@
 	      <li class="menu-active"><a href="index.html">Home</a></li>
               <li><a href="drift.html">Genetic drift</a></li>
               <li><a href="mutation.html">Mutation</a></li>
-              <li><a href="#">Selection</a></li>
-              <li><a href="#">Others</a></li>
+              <li><a href="selection.html">Selection</a></li>
+              <!-- <li><a href="#">Others</a></li> -->
 	    </ul>
 	  </nav><!-- #nav-menu-container -->		    		
 	</div>
@@ -88,17 +88,25 @@
     <section class="sample-text-area">
       <div class="container">
 	<h3 class="text-heading">Effect of mutations on diversity</h3>
-	<p class="sample-text">
-          Apart from the genetic drift we discuss in the last chapter, <b>mutations</b> are often involved with evolutions. Mutations can result from:
-          <div class="">
-            <ul class="unordered-list">
-              <li>errors during DNA replication</li>
-              <li>damage to DNA (such as caused by exposure to radiation or carcinogens)</li>
-              <li>insertion or deletion of segments of DNA due to mobile genetic elements</li>
-            </ul>
-          </div><br>
-          On one hand, mutations provide materials for natural selections. Generally mutations may or may not produce changes in the phenotype of an organism. On the other hand even if without natural selections, the process of mutation still effect the frequency of alleles. We will see the simulation combining the effect of drift and mutation in next chapter. Later we introduce a mathematical description for these two processes and discuss the balance status.
-        </p>
+        <div class="row">
+          <div class="col-md-9">
+	    <p class="sample-text">
+              Apart from the genetic drift we discuss in the last chapter, <b>mutations</b> are often involved with evolutions. Mutations can result from:
+              <div class="">
+                <ul class="unordered-list">
+                  <li>errors during DNA replication</li>
+                  <li>damage to DNA (such as caused by exposure to radiation or carcinogens)</li>
+                  <li>insertion or deletion of segments of DNA due to mobile genetic elements</li>
+                </ul>
+              </div><br>
+              On one hand, mutations provide materials for natural selections. Generally mutations may or may not produce changes in the phenotype of an organism. On the other hand even if without natural selections, the process of mutation still effect the frequency of alleles. We will see the simulation combining the effect of drift and mutation in next chapter. Later we introduce a mathematical description for these two processes and discuss the balance status.<br><br>
+              <i>Figure source: <a href="https://pokemontownship.deviantart.com/journal/Mutation-Guide-663165036">https://pokemontownship.deviantart.com/journal/Mutation-Guide-663165036</a></i>
+            </p>
+          </div>
+          <div class="col-md-3">
+            <img src="img/mutation_pikachu.png" alt="" class="img-fluid">
+	  </div>
+        </div>
       </div>
     </section>
     <!-- End Sample Area -->
@@ -109,43 +117,90 @@
         <div class="section-top-border">
 	  <h3 class="text-heading">Simulate genetic drift and mutation</h3>
 	  <p class="sample-text">
-            We perform a simulation of genetic drift and mutation together. For the drift side, all the assumptions are same with the previous chapter. Therefore, the difference of the result here from the one in the previous chapter is the effect from mutations. To study the result of the population size, the simulations use size of 20, 200 and 2000. Here, only a gen with two alleles (red and blue) is considered. The plots shown below are the frequency of red allele as a function of generation. 
+            We perform a simulation of genetic drift and mutation together. For the drift side, all the assumptions are same with the previous chapter. Therefore, the difference of the result here from the one in the previous chapter is the effect from mutations. The probability of the two alleles to each other is same (1%). To study the result of the population size, the simulations use size of 20, 200 and 2000. Here, only a gene with two alleles (red and blue) is considered. The plots shown below are the frequency of red allele as a function of generation. 
           </p>
           <div class="divcenter_1000">
             <img src="plots/caline_mutation_N2.png" alt="" class="img-fluid">
           </div>
           <p>
-            We can see after 19 generations, only red allele is maintained, and no blue allele can be found. Therefore, from here on no blue allele will show up if no mutation is introduced. We call this status as <b>fixation</b> (frequency of 100%) and <b>loss</b> (disappear) of alleles.<br>
-            In this example, there are 20 individuals, and it is natural to imagine that when the population size becomes larger, the effect of drift will be smaller. To confirm this, we look at the allele frequency of the red allele in terms of generations under the population size of 20, 200 and 2000. For each configuration, 6 simulations are performed. The results shown below.
-          </p>
-          <p class="sample-text">
-            On the other hand, what if there are more than two alleles? To study the fixation time dependence on the number of alleles, we take a look at the distribution of five alleles in each generation which is shown in the video below.          
+            We can see there is no fixation or loss for a specific allele, because even if an allele is lost, it is still possible to appear again due to mutation. Therefore, genetic drift reduces the genetic diversity, while mutation increases the genetic diversity at the same time. They effect the dynamics of a population together. In next chapter, we will build a simple mathematical model to describe these two processes and discuss their roles under different configurations.
           </p>
         </div>
       </div>
     </section>
-    <!-- Simulation -->
+    <!-- End Simulation -->
 
-    <!-- Diversity -->
+    <!-- Math -->
+    <section class="sample-text-area">
+      <div class="container">
+        <h3 class="text-heading">Mathematical description</h3>
+        <h4>Probability density and the forward Kolmogorov equation</h4><br>
+        <p>
+          Let's consider a system with population size of <i>N</i> with a gene with two alleles (<i>A<sub>1</sub></i> and <i>A<sub>2</sub></i>). To describe the frequency of one alleles, if there are <i>n</i> individuals with <i>A<sub>1</sub></i>, we define <i>x</i> as the fraction of individuals with <i>A<sub>1</sub></i> in the whole population (<i>x=n/N</i>). A good variable to describe the whole system under random variation is <b>probability density <i>p(x,t)</i></b>, which means <b>the probability of a population with <i>A<sub>1</sub></i> fraction of <i>x</i> at time <i>t</i></b>. <i>p(x,t)</i> satisfies <a href="https://en.wikipedia.org/wiki/Fokker%E2%80%93Planck_equation">the forward Kolmogorov equation</a>          
+        </p>
+        <div class="divcenter_450">
+          <img src="formula/formula_equa.png" alt="" class="img-fluid">
+        </div>
+        <p> where <b><i>v(x)</i> is drift term</b>, expressing the velocity with which transitions change: </p>
+        <div class="divcenter_300">
+          <img src="formula/formula_vx.png" alt="" class="img-fluid">
+        </div>
+        <p> and <b><i>D(x)</i> is diffusion coefficient</b>, characterizing the range of random variation of the probability function: </p>
+        <div class="divcenter_360">
+          <img src="formula/formula_Dx.png" alt="" class="img-fluid">
+        </div>
+        <p> where <b><i>R(y,x)</i> is the rate of transition from state <i>y</i> to <i>x</i></b>. If the transition rate of <i>A<sub>2</sub> <span class="lnr lnr-arrow-right"></span> A<sub>1</sub></i> (<i>A<sub>1</sub> <span class="lnr lnr-arrow-right"></span> A<sub>2</sub></i>) is <i>&mu;<sub>1</sub></i> (<i>&mu;<sub>2</sub></i>), then </p>
+        <div class="divcenter_480">
+          <img src="formula/formula_vxDxmu.png" alt="" class="img-fluid">
+        </div>
+        <p> For genetic drift, if assuming no mutations (<i>&mu;<sub>1</sub>=&mu;<sub>2</sub>=0</i>), by employing binomial selection model<sup>see below</sup>, we can get for diploid, </p>
+        <div class="divcenter_270">
+          <img src="formula/formula_Dxdiploid.png" alt="" class="img-fluid">
+        </div>
+        <p> Therefore, combining these two contributions, we can have the final drift and diffusion terms: </p>
+        <div class="divcenter_800">
+          <img src="formula/formula_finalvxDx.png" alt="" class="img-fluid">
+        </div>        
+
+        <h4>Steady solution</h4><br>
+        <p> In terms of the forward Kolmogorov equation, it is interesting and technically easier to find the steady state solution to which the population settles after a long time, which is denoted as <i>p*(x)</i>. Thus, </p>
+        <div class="divcenter_600">
+          <img src="formula/formula_steadyequ.png" alt="" class="img-fluid">
+        </div>
+        <p> With <i>v(x)</i> and <i>D(x)</i> we find above, a steady probability density function under assumption <i>&mu;<sub>1</sub>=&mu;<sub>2</sub>=&mu;</i> as a function of <i>x</i> can be obtained: </p>
+        <div class="divcenter_270">
+          <img src="formula/formula_steadysol.png" alt="" class="img-fluid">
+        </div>
+        The result we just obtain is very interesting. It indicates that the behavior of the system is dramatically different with <b><i>4N&mu;<1</i></b> and <b><i>4N&mu;>1</i></b>. We plot <i>p*(x)</i> for these two situations, which is shown in the plot below.
+        <div class="divcenter_800">
+          <img src="plots/drift_mutation_balance.png" alt="" class="img-fluid">
+        </div>
+        <p> Therefore, <b> the mutation scale is <i>&mu;</i></b>, and <b>the genetic drift scale is <i>1/4N</i></b>. When <i>4N&mu;<1</i>, the genetic drift is dominant, and therefore the system will reach fixation (loss) of an allele. When <i>4N&mu;<1</i>, the mutation is dominant, and therefore the system will reach an equilibrium at <i>x=0.5</i>.               
+                                                                                                                                                                                                                                                                  </div>
+    </section>
+    <!-- End Math -->
+
+    <!-- Start Definition -->
     <div class="whole-wrap">
       <div class="container">
         <div class="section-top-border">
-          <h3 class="text-heading">Effect of genetic drift on gene diversity</h3>
+          <h3 class="mb-30">Definition</h3>
           <div class="row">
-            <div class="col-md-4">
-              <img src="img/mechan_intro.gif" alt="" class="img-fluid">
-            </div>
-            <div class="col-md-7 mt-sm-20">
-              <p>
-                According to the two animations shown in the previous chapter, we see an interesting feature about genetic drift. With various allele number and <i>(finite)</i> population size, it will reach fixation / loss of alleles sooner or later. Therefore, <b>the effect of genetic drift is reducing the diversity of gene</b>. In the next chapter, we will see, a process with opposite effect happens in the real world, that is <b>mutation</b>.<br><br>
-                <i>Figure source: <a href="https://www.sesbe.org/evosite/evo101/IIIMechanisms.shtml.html">https://www.sesbe.org/evosite/evo101/IIIMechanisms.shtml.html</a></i>
-              </p>
+            <div class="col-md-10">
+              <div class="single-defination">
+                <h4 class="mb-20">Binomial selection</h4>
+                <p> Consider a population of size <i>N</i> with two forms of an allele, A<sub>1</sub> and A<sub>2</sub>. In the model of binomial selection, the new generation has the same size with the previous generation. Every individual has the same probability to produce a offspring. Therefore, if currently there are <i>n</i> individuals with A<sub>1</sub>, the probability to have <i>m</i> individuals in the next generation is </p>
+                <div class="divcenter_270">
+                  <img src="formula/formula_bino.png" alt="" class="img-fluid">
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <!-- End Definition -->
+    
     <!-- start footer Area -->
     <footer class="footer-area section-gap">
       <div class="container">

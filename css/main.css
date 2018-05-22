@@ -135,6 +135,14 @@ h4, h5, h6 {
     color: #222222;
 }
 
+quotegg, .quotegg {
+    font-size: 2.5em; /* = 40px/16px */
+    line-height: 1.1em; /* = 44px/40px */
+    margin-bottom: 22px;
+    /* font-size: 36px; */
+    /* margin-bottom: 0; */
+}
+
 h1, .h1 {
     font-size: 36px;
 }
@@ -771,9 +779,64 @@ td, th {
     margin-right: 0;
 }
 
+.divcenter_h50 {
+    height:50px;
+    /* width:auto; */
+    margin-bottom: 20px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divcenter_200 {
+    width:200px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divcenter_270 {
+    width:270px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divcenter_300 {
+    width:300px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divcenter_360 {
+    width:360px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.divcenter_450 {
+    width:450px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.divcenter_480 {
+    width:480px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .divcenter_600 {
     width:600px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
@@ -781,7 +844,15 @@ td, th {
 
 .divcenter_1000 {
     width:1000px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divcenter_800 {
+    width:800px;
+    margin-bottom: 10px;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
@@ -2322,6 +2393,11 @@ body.mobile-nav-active #mobile-nav-toggle {
     background-size: cover;
 }
 
+.banner-area-selection {
+    background: url(../img/selection-bg-1.jpg) center;
+    background-size: cover;
+}
+
 .banner-area .overlay-bg {
     background-color: rgba(0, 0, 0, 0.6);
 }
@@ -2331,6 +2407,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area-mutation .overlay-bg {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.banner-area-selection .overlay-bg {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
